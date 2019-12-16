@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>earth-gl</title>
+</head>
+
+<body>
+  <canvas id="canvasId" width="500" height="500">
+    Please use a browser that supports "canvas"
+  </canvas>
+    
+  <script type="text/javascript" src="./rtgl.js"></script>
+  <script type="text/javascript" src="./shaders.js"></script>
+  <script type="text/javascript" src="./earth.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+        loadWebGL();
+    };
+  </script>
+</body>
+</html>
