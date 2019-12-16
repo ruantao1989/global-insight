@@ -22,7 +22,7 @@ function initTexture(src) {
 }
 
 // function mvPushMatrix() {
-//   var copy = ""//new okMat4(); //TODO
+//   var copy; //TODO
 //   mvMatrix.clone(copy);
 //   mvMatrixStack.push(copy);
 // }
@@ -141,7 +141,6 @@ function drawScene() {
   gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-  //pMatrix = okMat4Proj(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0);//TODO
   Mat4.perspective(pMatrix, 45, gl.viewportWidth / gl.viewportHeight, 0.1, 100);
 
   var lighting = 0;
@@ -172,8 +171,6 @@ function drawScene() {
   //     );
   // }
 
-  //mvMatrix = okMat4Trans(0.0, 0.0, -6.0); //TODO
-  //mvMatrix = okMat4Mul(mvMatrix, earthRotationMatrix);//TODO
   //Mat4.translate(mvMatrix, mvMatrix, [0.0, 0.0, -6.0]);
   var look = 5;
   Mat4.lookAt(mvMatrix, [0, look, look], [0, 0, 0], [0, 1, 0]);
@@ -305,7 +302,7 @@ function handleMouseMove(event) {
   var speedFactor = 60;
 
   var deltaX = newX - lastMouseX
-  var newRotationMatrix = Mat4.identity(Mat4.create());//new okMat4();//TODO
+  var newRotationMatrix = Mat4.identity(Mat4.create());
   Mat4.rotate(newRotationMatrix, newRotationMatrix, (deltaX / speedFactor), [0, 1, 0]);//Y axis
 
   var deltaY = newY - lastMouseY;
